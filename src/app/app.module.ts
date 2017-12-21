@@ -13,10 +13,11 @@ import { ProductComponent } from './product/product.component';
 import { StarsComponent } from './stars/stars.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { HomeComponent } from './home/home.component';
+import { ProductService } from './shared/product.service';
 
 const routeConfig: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'product/:prodTitle', component: ProductDetailComponent}
+  {path: 'product/:productId', component: ProductDetailComponent}
 ]
 
 // 装饰器，
@@ -30,7 +31,7 @@ const routeConfig: Routes = [
     HttpModule,  // http服务模块
     RouterModule.forRoot(routeConfig)
   ],
-  providers: [],  // 声明模块中提供了什么服务，依赖注入
+  providers: [ProductService],  // 声明模块中提供了什么服务，依赖注入
   bootstrap: [AppComponent]  //声明了模块的主组件
 })
 export class AppModule { }
