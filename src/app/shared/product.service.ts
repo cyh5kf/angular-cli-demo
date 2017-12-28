@@ -33,8 +33,6 @@ export class ProductService {
     return this.comments.filter((comment: Comment) => comment.productId == id);
   }
 
-  
-
 }
 
 export class Product {
